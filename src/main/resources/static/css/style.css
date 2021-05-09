@@ -1,3 +1,19 @@
 body {
     text-align: center;
 }
+
+#movies-section {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+    justify-content: center;
+}
+
+.movie {
+    border: solid 1px gray;
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 1px 5px 0 #B27877;
+}

@@ -12,9 +12,9 @@ public class MoviesController {
 
     public MoviesController() {
         movies = List.of(
-                new Movie("Kingdom of Heaven", 2005, "Ridley Scott"),
-                new Movie("Judas and the Black Messiah", 2021, "Shaka King"),
-                new Movie("Toy Story", 1995, "John Lasseter")
+                new Movie("Kingdom of Heaven", 2005),
+                new Movie("Judas and the Black Messiah", 2021),
+                new Movie("Toy Story", 1995)
         );
     }
 

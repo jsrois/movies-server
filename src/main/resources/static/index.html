@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <form action="/movies" method="post">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title"/>
+        <label for="year">Year</label>
+        <input type="text" id="year" name="year"/>
+        <input type="submit" value="Send Movie">
+    </form>
     <h1>Our list of movies</h1>
     <section id="movies-section"></section>
 </body>

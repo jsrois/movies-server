@@ -17,3 +17,16 @@ body {
     border-radius: 10px;
     box-shadow: 2px 1px 5px 0 #B27877;
 }
+
+.movie .close-button {
+    width: 18px;
+    margin: 11px 10px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+
+.movie:hover .close-button {
+    display: block;
+}

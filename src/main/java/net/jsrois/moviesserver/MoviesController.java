@@ -3,9 +3,7 @@ package net.jsrois.moviesserver;
 import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
@@ -31,18 +29,8 @@ public class MoviesController {
         return new RedirectView("/");
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @DeleteMapping("/movies/{index}")
+    void deleteMovie(@PathVariable int index) {
+        movies.remove(index);
+    }
 }

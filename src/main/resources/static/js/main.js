@@ -2,11 +2,16 @@ const moviesSection = document.querySelector("#movies-section");
 
 // 3)
 function showMovies(movies) {
-    movies.forEach(movie => {
-        const element = `<div class="movie">
+    moviesSection.innerHTML="";
+    movies.forEach((movie, i) => {
+        const htmlElement = document.createElement("div");
+        htmlElement.innerHTML = `<div class="movie">
             <p class="title">${movie.title} (${movie.year})</p>
         </div>`;
-        moviesSection.insertAdjacentHTML("beforeend", element)
+        htmlElement.addEventListener("click", function(){
+            fetch(`/movies/${i}`, { method: 'DELETE'}).then(loadMovies)
+        })
+        moviesSection.appendChild(htmlElement)
     })
 }
 

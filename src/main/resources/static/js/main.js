@@ -24,4 +24,19 @@ let reloadMovies = () => {
         })
 };
 
+let reloadFavouriteMovies = () => {
+    fetch("/movies?favourites=true")
+        .then(r => r.text())
+        .then(moviesFragment => {
+            moviesSection.innerHTML = moviesFragment
+        })
+};
+
+
 document.addEventListener("DOMContentLoaded", reloadMovies)
+
+const loadAllMoviesButton = document.querySelector("#load-all-movies")
+const loadFavouriteMoviesButton = document.querySelector("#load-favourite-movies")
+
+loadAllMoviesButton.addEventListener("click", reloadMovies)
+loadFavouriteMoviesButton.addEventListener("click", reloadFavouriteMovies)

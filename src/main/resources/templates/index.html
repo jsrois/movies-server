@@ -6,15 +6,19 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <form action="/movies" method="post" onsubmit="sendForm(event, this)">
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title"/>
-        <label for="year">Year</label>
-        <input type="text" id="year" name="year"/>
-        <input type="submit" id="submit-button" value="Send Movie">
-    </form>
-    <h1>Our list of movies</h1>
-    <section id="movies-section"></section>
+<form action="/movies" method="post" onsubmit="sendForm(event, this)">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title"/>
+    <label for="year">Year</label>
+    <input type="text" id="year" name="year"/>
+    <input type="submit" id="submit-button" value="Send Movie">
+</form>
+<h1>Our list of movies </h1>
+<h2>
+    <button id="load-all-movies">All movies</button>
+    <button id="load-favourite-movies">Favourite movies</button>
+</h2>
+<section id="movies-section"></section>
 </body>
 <script th:src="@{/js/main.js}"></script>
 </html>

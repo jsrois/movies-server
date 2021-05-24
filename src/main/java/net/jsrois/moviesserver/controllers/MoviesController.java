@@ -8,6 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 @Controller
 public class MoviesController {
     private MovieRepository repository;
@@ -18,9 +23,17 @@ public class MoviesController {
     }
 
     @GetMapping("/movies")
-    public ModelAndView allMovies() {
+    public ModelAndView allMovies(@RequestParam(defaultValue = "false", required = false) boolean favourites) {
         ModelAndView modelAndView = new ModelAndView("fragments/movies");
-        modelAndView.addObject("movies", repository.getMovies());
+        Map<Integer, Movie> movies = repository.getMovies();
+        if (favourites) {
+            movies = movies.entrySet()
+                    .stream()
+                    .filter(entry -> entry.getValue().isFavourite())
+                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        }
+
+        modelAndView.addObject("movies", movies);
         return modelAndView;
     }
 

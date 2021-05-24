@@ -3,16 +3,16 @@ const moviesSection = document.querySelector("#movies-section");
 // 3)
 function showMovies(movies) {
     moviesSection.innerHTML = "";
-    movies.forEach((movie, position) => {
+    for (let [id, movie] of Object.entries(movies)){
         const htmlElement = document.createElement("div");
         htmlElement.innerHTML = `<div class="movie">
             <div 
                 class="close-button" 
-                onclick="fetch(\`/movies/${position}\`, { method: 'DELETE'}).then(reloadMovies)">x</div>
+                onclick="fetch(\`/movies/${id}\`, { method: 'DELETE'}).then(reloadMovies)">x</div>
             <p class="title">${movie.title} (${movie.year})</p>
         </div>`;
         moviesSection.appendChild(htmlElement)
-    })
+    }
 }
 
 

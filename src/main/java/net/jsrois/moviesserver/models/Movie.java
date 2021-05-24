@@ -1,4 +1,4 @@
-package net.jsrois.moviesserver;
+package net.jsrois.moviesserver.models;
 
 public class Movie {
 

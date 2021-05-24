@@ -1,14 +1,16 @@
 const moviesSection = document.querySelector("#movies-section");
 
-// 3)
-
 function deleteMovie(id) {
     fetch(`/movies/${id}`, {method: 'DELETE'})
         .then(reloadMovies)
 }
 
+function sendForm(event, form) {
+    fetch(form.action, {method: 'post', body: new FormData(form)})
+        .then(reloadMovies);
+    event.preventDefault();
+}
 
-// 2)
 let reloadMovies = () => {
     fetch("/movies")
         .then(r => r.text())
@@ -17,5 +19,4 @@ let reloadMovies = () => {
         })
 };
 
-// 1)
 document.addEventListener("DOMContentLoaded", reloadMovies)

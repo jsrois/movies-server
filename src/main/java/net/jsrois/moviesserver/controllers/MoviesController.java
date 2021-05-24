@@ -26,14 +26,14 @@ public class MoviesController {
     }
 
     @PostMapping("/movies")
-    public RedirectView addNewMovie(Movie movie) {
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void addNewMovie(Movie movie) {
         repository.addMovie(movie);
-        return new RedirectView("/");
     }
 
     @DeleteMapping("/movies/{index}")
     @ResponseStatus(HttpStatus.OK)
-    void deleteMovie(@PathVariable Integer index) {
+    public void deleteMovie(@PathVariable Integer index) {
         repository.deleteMovie(index);
     }
 }

@@ -6,7 +6,7 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <form action="/movies" method="post">
+    <form action="/movies" method="post" onsubmit="sendForm(event, this)">
         <label for="title">Title</label>
         <input type="text" id="title" name="title"/>
         <label for="year">Year</label>

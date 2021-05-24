@@ -4,11 +4,17 @@ public class Movie {
 
     private final String title;
     private final int year;
-    private final boolean favourite = false;
+    private boolean favourite;
 
-    public Movie(String title, int year){
+
+    public Movie(String title, int year) {
         this.title = title;
         this.year = year;
+        this.favourite = false;
+    }
+
+    public void setFavourite(boolean value) {
+        this.favourite = value;
     }
 
     public String getTitle() {

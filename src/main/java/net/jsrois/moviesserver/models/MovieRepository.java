@@ -37,4 +37,10 @@ public class MovieRepository {
     private Integer nextIndex() {
         return index++;
     }
+
+    public void updateMovie(Integer id, boolean markAsFavourite) {
+        Movie movie = movies.get(id);
+        movie.setFavourite(markAsFavourite);
+        movies.put(id, movie);
+    }
 }

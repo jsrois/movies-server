@@ -35,4 +35,10 @@ public class MoviesController {
     public void deleteMovie(@PathVariable Integer id) {
         repository.deleteMovie(id);
     }
+
+    @PutMapping("/movies/{id}/favourite/{markAsFavourite}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void setFavourite(@PathVariable Integer id, @PathVariable boolean markAsFavourite){
+        repository.updateMovie(id, markAsFavourite);
+    }
 }

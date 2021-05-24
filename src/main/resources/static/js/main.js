@@ -5,8 +5,8 @@ function deleteMovie(id) {
         .then(reloadMovies)
 }
 
-function likeMovie(id) {
-    fetch("/movies/${id}/like", { method: 'PUT'})
+function markAsFavourite(id, enable ) {
+    fetch(`/movies/${id}/favourite/${enable}`, { method: 'PUT'})
         .then(reloadMovies)
 }
 

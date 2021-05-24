@@ -4,6 +4,7 @@ public class Movie {
 
     private final String title;
     private final int year;
+    private final boolean favourite = false;
 
     public Movie(String title, int year){
         this.title = title;
@@ -16,5 +17,9 @@ public class Movie {
 
     public int getYear() {
         return year;
+    }
+
+    public boolean isFavourite() {
+        return favourite;
     }
 }

@@ -18,15 +18,29 @@ body {
     box-shadow: 2px 1px 5px 0 #B27877;
 }
 
+.movie .icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .movie .close-button {
     width: 18px;
     margin: 11px 10px;
     border: 1px solid gray;
     border-radius: 50%;
     cursor: pointer;
-    display: none;
 }
 
-.movie:hover .close-button {
-    display: block;
+.movie .like-button {
+    margin:10px;
+    cursor: pointer;
+}
+
+.movie .like-button:hover {
+    fill: red;
+}
+
+.movie .like-button.favourite {
+    fill: red;
 }

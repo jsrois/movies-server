@@ -5,6 +5,11 @@ function deleteMovie(id) {
         .then(reloadMovies)
 }
 
+function likeMovie(id) {
+    fetch("/movies/${id}/like", { method: 'PUT'})
+        .then(reloadMovies)
+}
+
 function sendForm(event, form) {
     fetch(form.action, {method: 'post', body: new FormData(form)})
         .then(reloadMovies);

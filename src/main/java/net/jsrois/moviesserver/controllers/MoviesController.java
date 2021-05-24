@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class MoviesController {
@@ -31,9 +30,9 @@ public class MoviesController {
         repository.addMovie(movie);
     }
 
-    @DeleteMapping("/movies/{index}")
+    @DeleteMapping("/movies/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void deleteMovie(@PathVariable Integer index) {
-        repository.deleteMovie(index);
+    public void deleteMovie(@PathVariable Integer id) {
+        repository.deleteMovie(id);
     }
 }

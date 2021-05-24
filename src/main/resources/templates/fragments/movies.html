@@ -1,0 +1,8 @@
+<div xmlns:th="http://www.thymeleaf.org" th:each="entry: ${movies}">
+    <div class="movie">
+        <div
+                class="close-button"
+                th:onclick="'deleteMovie(' + ${entry.key} + ')'">x</div>
+        <p class="title" th:text="${entry.value.title}+' (' +${entry.value.year}+')'">
+    </div>
+</div>

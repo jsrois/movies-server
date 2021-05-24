@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Our list of movies</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <form action="/movies" method="post">
@@ -16,5 +16,5 @@
     <h1>Our list of movies</h1>
     <section id="movies-section"></section>
 </body>
-<script src="js/main.js"></script>
+<script th:src="@{/js/main.js}"></script>
 </html>

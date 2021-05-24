@@ -1,26 +1,20 @@
 const moviesSection = document.querySelector("#movies-section");
 
 // 3)
-function showMovies(movies) {
-    moviesSection.innerHTML = "";
-    for (let [id, movie] of Object.entries(movies)){
-        const htmlElement = document.createElement("div");
-        htmlElement.innerHTML = `<div class="movie">
-            <div 
-                class="close-button" 
-                onclick="fetch(\`/movies/${id}\`, { method: 'DELETE'}).then(reloadMovies)">x</div>
-            <p class="title">${movie.title} (${movie.year})</p>
-        </div>`;
-        moviesSection.appendChild(htmlElement)
-    }
+
+function deleteMovie(id) {
+    fetch(`/movies/${id}`, {method: 'DELETE'})
+        .then(reloadMovies)
 }
 
 
 // 2)
 let reloadMovies = () => {
     fetch("/movies")
-        .then(r => r.json())
-        .then(showMovies)
+        .then(r => r.text())
+        .then(moviesFragment => {
+            moviesSection.innerHTML = moviesFragment
+        })
 };
 
 // 1)
